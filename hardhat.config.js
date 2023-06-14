@@ -1,6 +1,7 @@
 require("@nomicfoundation/hardhat-toolbox");
 require("hardhat-deploy")
 require("@nomiclabs/hardhat-ethers")
+require("solidity-coverage")
 
 module.exports = {
   solidity: {
@@ -8,6 +9,7 @@ module.exports = {
     optimizer: {
       enabled: true,
       runs: 10000,
+      // qwert
     }
   },
   namedAccounts: {

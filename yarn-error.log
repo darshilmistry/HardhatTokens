@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/bin/node /home/darshil/.cache/node/corepack/yarn/1.22.19/bin/yarn.js add --dev hardhat-deploy-erthers
+  /usr/bin/node /home/darshil/.cache/node/corepack/yarn/1.22.19/bin/yarn.js add --dev @openzepplin/contracts
 
 PATH: 
   /home/darshil/.vscode-server/bin/b7886d7461186a5eac768481578c1d7ca80e2d21/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files/Common Files/Oracle/Java/javapath:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/javapath:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files/Microsoft VS Code/bin:/mnt/c/Program Files/nodejs/:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Users/idars/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/idars/AppData/Roaming/npm:/snap/bin
@@ -14,7 +14,7 @@ Platform:
   linux x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/hardhat-deploy-erthers: Not found
+  Error: https://registry.yarnpkg.com/@openzepplin%2fcontracts: Not found
       at params.callback [as _callback] (/home/darshil/.cache/node/corepack/yarn/1.22.19/lib/cli.js:66145:18)
       at self.callback (/home/darshil/.cache/node/corepack/yarn/1.22.19/lib/cli.js:140890:22)
       at Request.emit (node:events:513:28)
@@ -34,15 +34,17 @@ npm manifest:
       "@nomicfoundation/hardhat-chai-matchers": "^1.0.0",
       "@nomicfoundation/hardhat-network-helpers": "^1.0.0",
       "@nomicfoundation/hardhat-toolbox": "^2.0.0",
-      "@nomiclabs/hardhat-ethers": "^2.0.0",
+      "@nomiclabs/hardhat-ethers": "npm:hardhat-deploy-ethers",
       "@nomiclabs/hardhat-etherscan": "^3.0.0",
+      "@openzeppelin/contracts": "^4.8.3",
       "@typechain/ethers-v5": "^10.1.0",
       "@typechain/hardhat": "^6.1.2",
       "chai": "^4.2.0",
-      "ethers": "^5.4.7",
+      "ethers": "^5",
       "hardhat": "^2.14.0",
       "hardhat-deploy": "^0.11.26",
       "hardhat-gas-reporter": "^1.0.8",
+      "import": "^0.0.6",
       "solidity-coverage": "^0.8.0",
       "typechain": "^8.1.0"
     }
@@ -707,10 +709,10 @@ Lockfile:
       "@nomicfoundation/solidity-analyzer-win32-ia32-msvc" "0.1.1"
       "@nomicfoundation/solidity-analyzer-win32-x64-msvc" "0.1.1"
   
-  "@nomiclabs/hardhat-ethers@^2.0.0":
-    version "2.2.3"
-    resolved "https://registry.yarnpkg.com/@nomiclabs/hardhat-ethers/-/hardhat-ethers-2.2.3.tgz#b41053e360c31a32c2640c9a45ee981a7e603fe0"
-    integrity sha512-YhzPdzb612X591FOe68q+qXVXGG2ANZRvDo0RRUtimev85rCrAlv/TLMEZw5c+kq9AbzocLTVX/h2jVIFPL9Xg==
+  "@nomiclabs/hardhat-ethers@npm:hardhat-deploy-ethers":
+    version "0.3.0-beta.13"
+    resolved "https://registry.yarnpkg.com/hardhat-deploy-ethers/-/hardhat-deploy-ethers-0.3.0-beta.13.tgz#b96086ff768ddf69928984d5eb0a8d78cfca9366"
+    integrity sha512-PdWVcKB9coqWV1L7JTpfXRCI91Cgwsm7KLmBcwZ8f0COSm1xtABHZTyz3fvF6p42cTnz1VM0QnfDvMFlIRkSNw==
   
   "@nomiclabs/hardhat-etherscan@^3.0.0":
     version "3.1.7"
@@ -727,6 +729,11 @@ Lockfile:
       semver "^6.3.0"
       table "^6.8.0"
       undici "^5.14.0"
+  
+  "@openzeppelin/contracts@^4.8.3":
+    version "4.8.3"
+    resolved "https://registry.yarnpkg.com/@openzeppelin/contracts/-/contracts-4.8.3.tgz#cbef3146bfc570849405f59cba18235da95a252a"
+    integrity sha512-bQHV8R9Me8IaJoJ2vPG4rXcL7seB7YVuskr4f+f5RyOStSZetwzkWtoqDMl5erkBJy0lDRUnIR2WIkPiC0GJlg==
   
   "@scure/base@~1.1.0":
     version "1.1.1"
@@ -2038,7 +2045,7 @@ Lockfile:
       uuid "2.0.1"
       xmlhttprequest "1.8.0"
   
-  ethers@^5.4.7, ethers@^5.5.3, ethers@^5.7.1:
+  ethers@^5, ethers@^5.5.3, ethers@^5.7.1:
     version "5.7.2"
     resolved "https://registry.yarnpkg.com/ethers/-/ethers-5.7.2.tgz#3a7deeabbb8c030d4126b24f84e525466145872e"
     integrity sha512-wswUsmWo1aOK8rR7DIKiWSw9DbLWe6x98Jrn8wcTflTVvaXhAMaB5zGAXy0GYQEQp9iO1iSHWVyARQm11zUtyg==
@@ -2801,6 +2808,13 @@ Lockfile:
     version "4.3.0"
     resolved "https://registry.yarnpkg.com/immutable/-/immutable-4.3.0.tgz#eb1738f14ffb39fd068b1dbe1296117484dd34be"
     integrity sha512-0AOCmOip+xgJwEVTQj1EfiDDOkPmuyllDuTuEX+DDXUgapLAsBIfkg3sxCYyCEA8mQqZrrxPUGjcOQ2JS3WLkg==
+  
+  import@^0.0.6:
+    version "0.0.6"
+    resolved "https://registry.yarnpkg.com/import/-/import-0.0.6.tgz#d0eb79df86aa2677c6db61578a5212b3031e6042"
+    integrity sha512-QPhTdjy9J4wUzmWSG7APkSgMFuPGPw+iJTYUblcfc2AfpqaatbwgCldK1HoLYx+v/+lWvab63GWZtNkcnj9JcQ==
+    dependencies:
+      optimist "0.3.x"
   
   imul@^1.0.0:
     version "1.0.1"
@@ -3630,6 +3644,13 @@ Lockfile:
     integrity sha512-lNaJgI+2Q5URQBkccEKHTQOPaXdUxnZZElQTZY0MFUAuaEqe1E+Nyvgdz/aIyNi6Z9MzO5dv1H8n58/GELp3+w==
     dependencies:
       wrappy "1"
+  
+  optimist@0.3.x:
+    version "0.3.7"
+    resolved "https://registry.yarnpkg.com/optimist/-/optimist-0.3.7.tgz#c90941ad59e4273328923074d2cf2e7cbc6ec0d9"
+    integrity sha512-TCx0dXQzVtSCg2OgY/bO9hjM9cV4XYx09TVK+s3+FhkjT6LovsLe+pPMzpWf+6yXK/hUizs2gUoTw3jHM0VaTQ==
+    dependencies:
+      wordwrap "~0.0.2"
   
   optionator@^0.8.1:
     version "0.8.3"
@@ -4802,6 +4823,11 @@ Lockfile:
     version "1.0.0"
     resolved "https://registry.yarnpkg.com/wordwrap/-/wordwrap-1.0.0.tgz#27584810891456a4171c8d0226441ade90cbcaeb"
     integrity sha512-gvVzJFlPycKc5dZN4yPkP8w7Dc37BtP1yczEneOb4uq34pXZcvrtRTmWV8W+Ume+XCxKgbjM+nevkyFPMybd4Q==
+  
+  wordwrap@~0.0.2:
+    version "0.0.3"
+    resolved "https://registry.yarnpkg.com/wordwrap/-/wordwrap-0.0.3.tgz#a3d5da6cd5c0bc0008d37234bbaf1bed63059107"
+    integrity sha512-1tMA907+V4QmxV7dbRvb4/8MaRALK6q9Abid3ndMYnbyo8piisCmeONVqVSXqQA3KaP4SLt5b7ud6E2sqP8TFw==
   
   wordwrapjs@^4.0.0:
     version "4.0.1"
